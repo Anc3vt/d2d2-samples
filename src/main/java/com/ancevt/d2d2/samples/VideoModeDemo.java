@@ -48,7 +48,7 @@ public class VideoModeDemo extends D2D2Main {
         BitmapText statusBitmapText = new BitmapText("");
         stage.add(statusBitmapText);
 
-        VideoModeControl videoModeControl = D2D2.backend().getVideoModeControl();
+        VideoModeControl videoModeControl = D2D2.engine().getVideoModeControl();
 
         long primaryMonitorId = videoModeControl.getPrimaryMonitorId();
         int maxRefreshRate = videoModeControl.getMaxRefreshRate(primaryMonitorId);
@@ -84,8 +84,8 @@ public class VideoModeDemo extends D2D2Main {
                     container.setScale(1, 1);
                     statusBitmapText.setText("");
 
-                    D2D2.backend().setWindowXY(10, 10);
-                    D2D2.backend().setWindowSize((int) D2D2.stage().getWidth(), (int) D2D2.stage().getHeight());
+                    D2D2.engine().setWindowXY(10, 10);
+                    D2D2.engine().setWindowSize((int) D2D2.stage().getWidth(), (int) D2D2.stage().getHeight());
                 });
             });
 

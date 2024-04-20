@@ -71,11 +71,12 @@ public class BitmapTextDemo extends D2D2Main {
         bitmapText3.setMulticolorEnabled(true);
         // Multicolor text should start with the `#` sign. It will not be rendered and will only signal
         // to the bitmap text that it should be rendered using multicolor
-        bitmapText3.setText("#bitmapText3: <FF00FF>multicolor<FF99EE> bitmap<0000FF> text\n" +
+        bitmapText3.setText("bitmapText3: <FF00FF>multicolor<FF99EE> bitmap<0000FF> text\n" +
             "<AABBEE>The second line of bitmap text");
 
-        // place it on the stage
         stage.add(bitmapText3, 100, 300);
+        // place it on the stage
+
     }
 
 }
