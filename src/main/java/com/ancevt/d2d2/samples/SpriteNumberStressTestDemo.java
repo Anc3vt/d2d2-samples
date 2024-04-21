@@ -19,7 +19,6 @@ package com.ancevt.d2d2.samples;
 
 import com.ancevt.commons.string.ConvertableString;
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.D2D2Main;
 import com.ancevt.d2d2.components.ComponentAssets;
 import com.ancevt.d2d2.components.dev.chat.Console;
 import com.ancevt.d2d2.debug.FpsMeter;
@@ -32,6 +31,7 @@ import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.event.Event;
 import com.ancevt.d2d2.event.InputEvent;
 import com.ancevt.d2d2.input.Mouse;
+import com.ancevt.d2d2.lifecycle.D2D2Main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ import java.util.function.IntConsumer;
 public class SpriteNumberStressTestDemo extends D2D2Main {
 
     public static void main(String[] args) {
-        D2D2.init(SpriteNumberStressTestDemo.class);
+        D2D2.init(SpriteNumberStressTestDemo.class, args);
     }
 
     private final List<IDisplayObject> objects = new ArrayList<>();
@@ -66,11 +66,7 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
             }
         };
 
-        console.addVariableListener("num", (varName, value) -> fn.accept(value.toIntOrDefault(1000)));
-
-        console.loadContext(
-            "num", "1024"
-        );
+        console.addVariableListener("num", "1024", (varName, value) -> fn.accept(value.toIntOrDefault(1000)));
 
         stage.add(container);
         stage.add(console, 10, 10);
@@ -115,7 +111,7 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
 //                }
 
                 if (getScaleX() < 1f) {
-                    toScale(1.1f, 1.1f);
+                    scale(1.1f, 1.1f);
                 }
             });
 

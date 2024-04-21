@@ -18,7 +18,7 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Main;
 import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Stage;
 
@@ -28,7 +28,7 @@ public class FrameworkInitDemo extends D2D2Main {
     // The entry point of the Java application
     public static void main(String[] args) {
         // Framework initialization with properties defined in src/resources/d2d2.properties
-        D2D2.init(FrameworkInitDemo.class);
+        D2D2.init(FrameworkInitDemo.class, args);
     }
 
     @Override

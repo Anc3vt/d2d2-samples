@@ -18,7 +18,7 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Main;
 import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.Sprite;
 import com.ancevt.d2d2.display.Stage;
@@ -29,7 +29,7 @@ import com.ancevt.d2d2.display.interactive.InteractiveContainer;
 public class InteractiveDemo extends D2D2Main {
 
     public static void main(String[] args) {
-        D2D2.init(InteractiveDemo.class);
+        D2D2.init(InteractiveDemo.class, args);
     }
 
     @Override

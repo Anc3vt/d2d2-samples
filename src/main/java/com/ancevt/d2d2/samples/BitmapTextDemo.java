@@ -18,7 +18,7 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Main;
 import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.text.BitmapFont;
@@ -28,7 +28,7 @@ import com.ancevt.d2d2.display.text.TtfBitmapFontBuilder;
 public class BitmapTextDemo extends D2D2Main {
 
     public static void main(String[] args) {
-        D2D2.init(BitmapTextDemo.class);
+        D2D2.init(BitmapTextDemo.class, args);
     }
 
     @Override

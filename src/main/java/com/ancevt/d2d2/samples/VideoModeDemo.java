@@ -18,7 +18,7 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Main;
 import com.ancevt.d2d2.engine.VideoMode;
 import com.ancevt.d2d2.engine.VideoModeControl;
 import com.ancevt.d2d2.components.Button;
@@ -36,7 +36,7 @@ import java.util.concurrent.CompletableFuture;
 public class VideoModeDemo extends D2D2Main {
 
     public static void main(String[] args) {
-        D2D2.init(VideoModeDemo.class);
+        D2D2.init(VideoModeDemo.class, args);
     }
 
     private final List<Button> buttons = new ArrayList<>();
@@ -115,9 +115,9 @@ public class VideoModeDemo extends D2D2Main {
             InputEvent e = event.casted();
 
             if (e.getDelta() > 0) {
-                container.toScale(1.1f, 1.1f);
+                container.scale(1.1f, 1.1f);
             } else {
-                container.toScale(0.9f, 0.9f);
+                container.scale(0.9f, 0.9f);
             }
 
             if (container.getScaleX() < 0.5f) {

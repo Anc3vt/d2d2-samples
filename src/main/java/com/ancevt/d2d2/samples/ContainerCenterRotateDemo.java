@@ -18,7 +18,7 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Main;
 import com.ancevt.d2d2.display.Container;
 import com.ancevt.d2d2.display.IContainer;
 import com.ancevt.d2d2.display.Sprite;
@@ -28,7 +28,7 @@ import com.ancevt.d2d2.event.Event;
 public class ContainerCenterRotateDemo extends D2D2Main {
 
     public static void main(String[] args) {
-        D2D2.init(ContainerCenterRotateDemo.class);
+        D2D2.init(ContainerCenterRotateDemo.class, args);
     }
 
     @Override
