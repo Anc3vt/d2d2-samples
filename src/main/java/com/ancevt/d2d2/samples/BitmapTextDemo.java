@@ -68,7 +68,7 @@ public class BitmapTextDemo extends D2D2Main {
         // using hex-RGB tags in the format <FFFFFF>
         BitmapText bitmapText3 = new BitmapText(bitmapFont);
         // Enable multicolor
-        bitmapText3.setMulticolorEnabled(true);
+        bitmapText3.setMulticolor(true);
         // Multicolor text should start with the `#` sign. It will not be rendered and will only signal
         // to the bitmap text that it should be rendered using multicolor
         bitmapText3.setText("bitmapText3: <FF00FF>multicolor<FF99EE> bitmap<0000FF> text\n" +
