@@ -27,7 +27,7 @@ public class FrameworkInitDemo extends D2D2Main {
 
     // The entry point of the Java application
     public static void main(String[] args) {
-        // Framework initialization with properties defined in src/resources/d2d2.properties
+        // Framework initialization with properties defined in src/resources/application.properties
         D2D2.init(FrameworkInitDemo.class, args);
     }
 

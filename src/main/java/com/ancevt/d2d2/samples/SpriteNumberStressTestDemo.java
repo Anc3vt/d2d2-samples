@@ -49,6 +49,8 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
 
     @Override
     public void onCreate(Stage stage) {
+        D2D2.engine().setSmoothMode(true);
+
         stage.setBackgroundColor(0x000011);
 
         ComponentAssets.init();
@@ -89,7 +91,9 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
             setScale(0.01f, 0.01f);
 
             Sprite sprite = new Sprite("d2d2-samples-tileset.png", 256, 176, 48, 48);
-            sprite.setColor(Color.GRAY);
+            sprite.setColor(Color.createRandomColor());
+            sprite.setAlpha(random.nextFloat());
+            sprite.setScale(random.nextFloat(0.1f, 3));
 
             sprite.addEventListener(Event.LOOP_UPDATE, event -> {
                 if (Mouse.getX() < getX()) {
@@ -104,11 +108,6 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
                 }
 
 
-//                if (getY() < -sprite.getHeight()) {
-//                    setY(D2D2.stage().getHeight());
-//                    setX(random.nextFloat(D2D2.stage().getWidth()));
-//                    setScale(0.01f, 0.01f);
-//                }
 
                 if (getScaleX() < 1f) {
                     scale(1.1f, 1.1f);
@@ -116,6 +115,11 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
             });
 
             add(sprite, -sprite.getWidth() / 2, -sprite.getHeight() / 2);
+        }
+
+        @Override
+        public void onLoopUpdate() {
+            rotate(1f);
         }
     }
 }

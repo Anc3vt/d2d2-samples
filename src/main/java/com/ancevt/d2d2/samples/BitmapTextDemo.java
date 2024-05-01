@@ -23,7 +23,7 @@ import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.text.BitmapFont;
 import com.ancevt.d2d2.display.text.BitmapText;
-import com.ancevt.d2d2.display.text.TtfBitmapFontBuilder;
+import com.ancevt.d2d2.display.text.TrueTypeBitmapFontBuilder;
 
 public class BitmapTextDemo extends D2D2Main {
 
@@ -48,14 +48,14 @@ public class BitmapTextDemo extends D2D2Main {
 
         // Create the second bitmap text by generating a bitmap font from any TrueType font
         // using TtfBitmapFontBuilder
-        BitmapFont bitmapFont = new TtfBitmapFontBuilder()
+        BitmapFont bitmapFont = new TrueTypeBitmapFontBuilder()
             .fontSize(24)
-            .ttfAssetPath("d2d2ttf/FreeSansBold.ttf")
+            .assetPath("d2d2ttf/FreeSansBold.ttf")
             .textAntialias(true)
             .build();
 
         BitmapText bitmapText2 = new BitmapText(bitmapFont);
-        bitmapText2.setText("bitmapText2: Using TtfBitmapFontBuilder generated bitmap font");
+        bitmapText2.setText("bitmapText2: Using TtfBitmapFontBuilder\n generated bitmap font");
         bitmapText2.setColor(Color.GREEN);
         // place it on the stage
         stage.add(bitmapText2, 100, 200);

@@ -75,7 +75,7 @@
     <dependencies>
         <dependency>
             <groupId>com.ancevt.d2d2</groupId>
-            <artifactId>d2d2-core</artifactId>
+            <artifactId>d2d2-framework</artifactId>
             <version>${project.version}</version>
         </dependency>
 

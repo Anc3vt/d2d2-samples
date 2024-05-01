@@ -25,7 +25,8 @@ public class DemoStarter {
 
     public static void main(String[] args) throws ClassNotFoundException {
         Args a = Args.of(args);
-        Class<?> clazz = Class.forName(FrameworkInitDemo.class.getPackageName() + "." + a.next());
+        String simpleClassName = a.hasNext() ? a.next() : "AnimatedDemo";
+        Class<?> clazz = Class.forName(FrameworkInitDemo.class.getPackageName() + "." + simpleClassName);
         D2D2.init((Class<? extends D2D2Main>) clazz, args);
     }
 
