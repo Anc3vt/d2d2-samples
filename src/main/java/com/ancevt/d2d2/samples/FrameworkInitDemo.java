@@ -23,7 +23,7 @@ import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Stage;
 
 // The main class of the D2D2 application must inherit from D2D2Main
-public class FrameworkInitDemo extends D2D2Main {
+public class FrameworkInitDemo implements D2D2Main {
 
     // The entry point of the Java application
     public static void main(String[] args) {

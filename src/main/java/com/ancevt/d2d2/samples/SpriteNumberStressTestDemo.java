@@ -29,7 +29,7 @@ import com.ancevt.d2d2.display.IDisplayObject;
 import com.ancevt.d2d2.display.Sprite;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.event.Event;
-import com.ancevt.d2d2.event.InputEvent;
+import com.ancevt.d2d2.event.InteractiveEvent;
 import com.ancevt.d2d2.input.Mouse;
 import com.ancevt.d2d2.lifecycle.D2D2Main;
 
@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.IntConsumer;
 
-public class SpriteNumberStressTestDemo extends D2D2Main {
+public class SpriteNumberStressTestDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(SpriteNumberStressTestDemo.class, args);
@@ -52,8 +52,6 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
         D2D2.engine().setSmoothMode(true);
 
         stage.setBackgroundColor(0x000011);
-
-        ComponentAssets.init();
 
         Console console = new Console();
 
@@ -74,7 +72,7 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
         stage.add(console, 10, 10);
         stage.add(new FpsMeter());
 
-        stage.addEventListener(InputEvent.MOUSE_DOWN, e -> {
+        stage.addEventListener(InteractiveEvent.DOWN, e -> {
             fn.accept(ConvertableString.convert(console.getContext().get("num")).toIntOrDefault(1000));
         });
     }
@@ -106,9 +104,6 @@ public class SpriteNumberStressTestDemo extends D2D2Main {
                 } else {
                     moveY(speed * Math.abs(Mouse.getY() - getY()) / 10);
                 }
-
-
-
                 if (getScaleX() < 1f) {
                     scale(1.1f, 1.1f);
                 }

@@ -24,7 +24,7 @@ import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.text.BitmapText;
 import com.ancevt.d2d2.event.Event;
 
-public class EventListenerDemo extends D2D2Main {
+public class EventListenerDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(EventListenerDemo.class, args);

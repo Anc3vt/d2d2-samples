@@ -26,7 +26,7 @@ import com.ancevt.d2d2.display.text.BitmapText;
 import com.ancevt.d2d2.event.InteractiveEvent;
 import com.ancevt.d2d2.display.interactive.InteractiveContainer;
 
-public class InteractiveDemo extends D2D2Main {
+public class InteractiveDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(InteractiveDemo.class, args);
@@ -42,7 +42,7 @@ public class InteractiveDemo extends D2D2Main {
         stage.add(statusText, 300, 50);
 
         // Create an interactive container with the sprite "flower.png"
-        InteractiveContainer interactiveContainer = InteractiveContainer.createInteractiveContainer(new Sprite("flower.png"));
+        InteractiveContainer interactiveContainer = new InteractiveContainer(new Sprite("flower.png"));
 
         // Register a listener for the DOWN event for the container
         interactiveContainer.addEventListener(InteractiveEvent.DOWN, event -> {

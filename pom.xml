@@ -81,6 +81,12 @@
 
         <dependency>
             <groupId>com.ancevt.d2d2</groupId>
+            <artifactId>d2d2-lwjgl-opengl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ancevt.d2d2</groupId>
             <artifactId>d2d2-components</artifactId>
             <version>${project.version}</version>
         </dependency>

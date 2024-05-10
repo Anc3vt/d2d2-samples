@@ -25,7 +25,7 @@ import com.ancevt.d2d2.display.Sprite;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.event.Event;
 
-public class ContainerCenterRotateDemo extends D2D2Main {
+public class ContainerCenterRotateDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(ContainerCenterRotateDemo.class, args);

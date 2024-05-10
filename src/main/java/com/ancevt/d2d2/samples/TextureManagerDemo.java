@@ -25,7 +25,7 @@ import com.ancevt.d2d2.display.texture.Texture;
 import com.ancevt.d2d2.display.texture.TextureAtlas;
 import com.ancevt.d2d2.display.texture.TextureManager;
 
-public class TextureManagerDemo extends D2D2Main {
+public class TextureManagerDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(TextureManagerDemo.class, args);

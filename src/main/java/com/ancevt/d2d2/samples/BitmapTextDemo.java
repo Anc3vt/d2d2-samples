@@ -25,7 +25,7 @@ import com.ancevt.d2d2.display.text.BitmapFont;
 import com.ancevt.d2d2.display.text.BitmapText;
 import com.ancevt.d2d2.display.text.TrueTypeBitmapFontBuilder;
 
-public class BitmapTextDemo extends D2D2Main {
+public class BitmapTextDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(BitmapTextDemo.class, args);

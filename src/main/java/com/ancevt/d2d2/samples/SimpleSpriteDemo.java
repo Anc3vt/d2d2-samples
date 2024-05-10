@@ -22,7 +22,7 @@ import com.ancevt.d2d2.lifecycle.D2D2Main;
 import com.ancevt.d2d2.display.Sprite;
 import com.ancevt.d2d2.display.Stage;
 
-public class SimpleSpriteDemo extends D2D2Main {
+public class SimpleSpriteDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(SimpleSpriteDemo.class, args);

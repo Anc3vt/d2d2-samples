@@ -26,7 +26,7 @@ import com.ancevt.d2d2.display.IContainer;
 import com.ancevt.d2d2.display.Sprite;
 import com.ancevt.d2d2.display.Stage;
 
-public class ContainerDemo extends D2D2Main {
+public class ContainerDemo implements D2D2Main {
 
     public static void main(String[] args) {
         D2D2.init(ContainerDemo.class, args);
