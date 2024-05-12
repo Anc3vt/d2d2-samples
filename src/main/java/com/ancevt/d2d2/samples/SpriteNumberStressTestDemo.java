@@ -19,8 +19,7 @@ package com.ancevt.d2d2.samples;
 
 import com.ancevt.commons.string.ConvertableString;
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.components.ComponentAssets;
-import com.ancevt.d2d2.components.dev.chat.Console;
+import com.ancevt.d2d2.components.dev.Console;
 import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.Container;
@@ -31,14 +30,14 @@ import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.event.Event;
 import com.ancevt.d2d2.event.InteractiveEvent;
 import com.ancevt.d2d2.input.Mouse;
-import com.ancevt.d2d2.lifecycle.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Application;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.IntConsumer;
 
-public class SpriteNumberStressTestDemo implements D2D2Main {
+public class SpriteNumberStressTestDemo implements D2D2Application {
 
     public static void main(String[] args) {
         D2D2.init(SpriteNumberStressTestDemo.class, args);

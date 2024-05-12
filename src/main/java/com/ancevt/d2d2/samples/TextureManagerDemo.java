@@ -18,14 +18,14 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.lifecycle.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.display.Sprite;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.texture.Texture;
 import com.ancevt.d2d2.display.texture.TextureAtlas;
 import com.ancevt.d2d2.display.texture.TextureManager;
 
-public class TextureManagerDemo implements D2D2Main {
+public class TextureManagerDemo implements D2D2Application {
 
     public static void main(String[] args) {
         D2D2.init(TextureManagerDemo.class, args);

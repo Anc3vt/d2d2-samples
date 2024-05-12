@@ -18,7 +18,7 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.lifecycle.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.util.args.Args;
 
 public class DemoStarter {
@@ -27,7 +27,7 @@ public class DemoStarter {
         Args a = Args.of(args);
         String simpleClassName = a.hasNext() ? a.next() : "AnimatedDemo";
         Class<?> clazz = Class.forName(FrameworkInitDemo.class.getPackageName() + "." + simpleClassName);
-        D2D2.init((Class<? extends D2D2Main>) clazz, args);
+        D2D2.init((Class<? extends D2D2Application>) clazz, args);
     }
 
 }

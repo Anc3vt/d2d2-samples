@@ -18,12 +18,12 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.lifecycle.D2D2Main;
+import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Stage;
 
 // The main class of the D2D2 application must inherit from D2D2Main
-public class FrameworkInitDemo implements D2D2Main {
+public class FrameworkInitDemo implements D2D2Application {
 
     // The entry point of the Java application
     public static void main(String[] args) {
