@@ -19,7 +19,6 @@ package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
-import com.ancevt.d2d2.common.PlainRect;
 import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.AnimatedSprite;
