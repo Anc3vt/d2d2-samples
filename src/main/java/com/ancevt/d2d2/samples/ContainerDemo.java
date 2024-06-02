@@ -18,12 +18,12 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
+import com.ancevt.d2d2.display.shape.BorderedRectangle;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
-import com.ancevt.d2d2.common.BorderedRect;
 import com.ancevt.d2d2.display.Color;
+import com.ancevt.d2d2.display.SimpleContainer;
 import com.ancevt.d2d2.display.Container;
-import com.ancevt.d2d2.display.IContainer;
-import com.ancevt.d2d2.display.Sprite;
+import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
 
 public class ContainerDemo implements D2D2Application {
@@ -36,20 +36,20 @@ public class ContainerDemo implements D2D2Application {
     public void onCreate(Stage stage) {
         // Initially, empty containers are invisible for user, so for convenience, let's create a rectangle
         // that will serve as a visual frame for our container
-        BorderedRect borderedRect = new BorderedRect(500, 500, Color.NO_COLOR, Color.DARK_GRAY);
+        BorderedRectangle borderedRectangle = new BorderedRectangle(500, 500, Color.NO_COLOR, Color.DARK_GRAY);
 
         // Create a container with an instant placement of the frame into it
-        IContainer container = new Container(borderedRect);
+        Container container = new SimpleContainer(borderedRectangle);
 
         // Create two sprites
-        Sprite sprite1 = new Sprite("flower.png");
-        Sprite sprite2 = new Sprite("flower.png");
+        SimpleSprite sprite1 = new SimpleSprite("flower.png");
+        SimpleSprite sprite2 = new SimpleSprite("flower.png");
 
         // Place the sprites in the container specifying their positions relative to the container
         // The `add` method overload below allows setting the coordinates of the added display object
         // in the container directly, instead of calling setXY for each sprite separately
-        container.add(sprite1, 50, 50);
-        container.add(sprite2, 200, 200);
+        container.addChild(sprite1, 50, 50);
+        container.addChild(sprite2, 200, 200);
 
         // Rotate the entire container by 10 degrees
         // When rendered, all content of the container will also rotate along with the container
@@ -57,7 +57,7 @@ public class ContainerDemo implements D2D2Application {
 
         // Add our container to the stage. In fact, Stage is also a container, since
         // it implements the IContainer interface
-        stage.add(container, 100, 100);
+        stage.addChild(container, 100, 100);
 
         // However, accessing properties of objects placed inside the container
         // will remain unchanged

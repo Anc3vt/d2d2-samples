@@ -22,10 +22,10 @@ import com.ancevt.d2d2.D2D2;
 import com.ancevt.d2d2.components.dev.Console;
 import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Color;
+import com.ancevt.d2d2.display.SimpleContainer;
 import com.ancevt.d2d2.display.Container;
-import com.ancevt.d2d2.display.IContainer;
-import com.ancevt.d2d2.display.IDisplayObject;
-import com.ancevt.d2d2.display.Sprite;
+import com.ancevt.d2d2.display.DisplayObject;
+import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.event.Event;
 import com.ancevt.d2d2.event.InteractiveEvent;
@@ -43,7 +43,7 @@ public class SpriteNumberStressTestDemo implements D2D2Application {
         D2D2.init(SpriteNumberStressTestDemo.class, args);
     }
 
-    private final List<IDisplayObject> objects = new ArrayList<>();
+    private final List<DisplayObject> objects = new ArrayList<>();
 
 
     @Override
@@ -54,29 +54,29 @@ public class SpriteNumberStressTestDemo implements D2D2Application {
 
         Console console = new Console();
 
-        IContainer container = new Container();
+        Container container = new SimpleContainer();
 
         IntConsumer fn = num -> {
-            container.removeAll(objects);
+            container.removeChildren(objects);
             for (int i = 0; i < num; i++) {
                 DSprite o = new DSprite();
-                container.add(o);
+                container.addChild(o);
                 objects.add(o);
             }
         };
 
         console.addVariableListener("num", "1024", (varName, value) -> fn.accept(value.toIntOrDefault(1000)));
 
-        stage.add(container);
-        stage.add(console, 10, 10);
-        stage.add(new FpsMeter());
+        stage.addChild(container);
+        stage.addChild(console, 10, 10);
+        stage.addChild(new FpsMeter());
 
         stage.addEventListener(InteractiveEvent.DOWN, e -> {
             fn.accept(ConvertableString.convert(console.getContext().get("num")).toIntOrDefault(1000));
         });
     }
 
-    public static class DSprite extends Container {
+    public static class DSprite extends SimpleContainer {
 
         private static final Random random = new Random();
 
@@ -87,7 +87,7 @@ public class SpriteNumberStressTestDemo implements D2D2Application {
             setXY(x, y);
             setScale(0.01f, 0.01f);
 
-            Sprite sprite = new Sprite("d2d2-samples-tileset.png", 256, 176, 48, 48);
+            SimpleSprite sprite = new SimpleSprite("d2d2-samples-tileset.png", 256, 176, 48, 48);
             sprite.setColor(Color.createRandomColor());
             sprite.setAlpha(random.nextFloat());
             sprite.setScale(random.nextFloat(0.1f, 3));
@@ -108,7 +108,7 @@ public class SpriteNumberStressTestDemo implements D2D2Application {
                 }
             });
 
-            add(sprite, -sprite.getWidth() / 2, -sprite.getHeight() / 2);
+            addChild(sprite, -sprite.getWidth() / 2, -sprite.getHeight() / 2);
         }
 
         @Override

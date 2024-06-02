@@ -41,7 +41,7 @@ public class BitmapTextDemo implements D2D2Application {
         bitmapText1.setText("bitmapText1: Using default bitmap font\nSecond line...\nThird...");
         bitmapText1.setColor(Color.YELLOW);
         bitmapText1.setScale(2, 2);
-        stage.add(bitmapText1, 100, 100);
+        stage.addChild(bitmapText1, 100, 100);
 
 
         // ------------ Example 2 ------------
@@ -58,7 +58,7 @@ public class BitmapTextDemo implements D2D2Application {
         bitmapText2.setText("bitmapText2: Using TtfBitmapFontBuilder\n generated bitmap font");
         bitmapText2.setColor(Color.GREEN);
         // place it on the stage
-        stage.add(bitmapText2, 100, 200);
+        stage.addChild(bitmapText2, 100, 200);
 
 
         // ------------ Example 3 ------------
@@ -74,7 +74,7 @@ public class BitmapTextDemo implements D2D2Application {
         bitmapText3.setText("bitmapText3: <FF00FF>multicolor<FF99EE> bitmap<0000FF> text\n" +
             "<AABBEE>The second line of bitmap text");
 
-        stage.add(bitmapText3, 100, 300);
+        stage.addChild(bitmapText3, 100, 300);
         // place it on the stage
 
     }

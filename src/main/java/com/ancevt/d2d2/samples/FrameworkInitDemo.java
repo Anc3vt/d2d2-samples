@@ -40,7 +40,7 @@ public class FrameworkInitDemo implements D2D2Application {
         // ...
 
         // Adding an FPS meter to the Stage. Can be useful for debugging
-        stage.add(new FpsMeter());
+        stage.addChild(new FpsMeter());
     }
 
     @Override

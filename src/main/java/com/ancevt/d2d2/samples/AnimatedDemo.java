@@ -18,12 +18,13 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.debug.FpsMeter;
 import com.ancevt.d2d2.display.Color;
-import com.ancevt.d2d2.display.AnimatedSprite;
-import com.ancevt.d2d2.display.IAnimated;
+import com.ancevt.d2d2.display.Playable;
+import com.ancevt.d2d2.display.PlayableSprite;
 import com.ancevt.d2d2.display.Stage;
+import com.ancevt.d2d2.display.shape.RectangleShape;
+import com.ancevt.d2d2.lifecycle.D2D2Application;
 
 import java.util.Random;
 
@@ -44,9 +45,9 @@ public class AnimatedDemo implements D2D2Application {
         createSomeBackground();
 
         // Create an animated sprite
-        IAnimated anim = new AnimatedSprite(
+        Playable anim = new PlayableSprite(
             // Load the texture atlas and create textures
-            D2D2.textureManager().loadTextureAtlas("d2d2-samples-tileset.png").createTexturesHor(256, 128, 48, 48, 4)
+            D2D2.getTextureManager().loadTextureAtlas("d2d2-samples-tileset.png").createTexturesHor(256, 128, 48, 48, 4)
         );
 
         // Set the scale of the sprite
@@ -59,10 +60,10 @@ public class AnimatedDemo implements D2D2Application {
         anim.play();
 
         // Add the animated sprite to the stage
-        stage.add(anim, 100, 100);
+        stage.addChild(anim, 100, 100);
 
         // Add an FPS meter to the stage
-        stage.add(new FpsMeter());
+        stage.addChild(new FpsMeter());
     }
 
 
@@ -72,7 +73,7 @@ public class AnimatedDemo implements D2D2Application {
         for (int i = 0; i < stage.getHeight() * 2; i++) {
             float size = random.nextFloat(1f, 100f);
 
-            PlainRect plainRect = new PlainRect(size, 5, Color.WHITE) {
+            RectangleShape plainRect = new RectangleShape(size, 5, Color.WHITE) {
                 @Override
                 public void onLoopUpdate() {
                     moveX(-1 * getY() / 50);
@@ -85,7 +86,7 @@ public class AnimatedDemo implements D2D2Application {
 
             plainRect.setAlpha(0.05f);
 
-            stage.add(plainRect, random.nextFloat(stage.getWidth()), i / 2);
+            stage.addChild(plainRect, random.nextFloat(stage.getWidth()), i / 2);
         }
     }
 }

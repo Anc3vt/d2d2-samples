@@ -20,7 +20,7 @@ package com.ancevt.d2d2.samples;
 import com.ancevt.d2d2.D2D2;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.display.Color;
-import com.ancevt.d2d2.display.Sprite;
+import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.text.BitmapText;
 import com.ancevt.d2d2.event.InteractiveEvent;
@@ -39,10 +39,10 @@ public class InteractiveDemo implements D2D2Application {
         // Set the text scale
         statusText.setScale(3, 3);
         // Add the text to the stage and set its position
-        stage.add(statusText, 300, 50);
+        stage.addChild(statusText, 300, 50);
 
         // Create an interactive container with the sprite "flower.png"
-        InteractiveContainer interactiveContainer = new InteractiveContainer(new Sprite("flower.png"));
+        InteractiveContainer interactiveContainer = new InteractiveContainer(new SimpleSprite("flower.png"));
 
         // Register a listener for the DOWN event for the container
         interactiveContainer.addEventListener(InteractiveEvent.DOWN, event -> {
@@ -80,7 +80,7 @@ public class InteractiveDemo implements D2D2Application {
         });
 
         // Add the container to the stage
-        stage.add(interactiveContainer);
+        stage.addChild(interactiveContainer);
     }
 
 }

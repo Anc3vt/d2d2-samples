@@ -19,7 +19,7 @@ package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
-import com.ancevt.d2d2.display.Sprite;
+import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
 
 public class SimpleSpriteDemo implements D2D2Application {
@@ -32,7 +32,7 @@ public class SimpleSpriteDemo implements D2D2Application {
     public void onCreate(Stage stage) {
         // Create a sprite with the image "flower.png".
         // The resource file flower.png should be located in the src/resources/assets/ directory.
-        Sprite sprite = new Sprite("flower.png");
+        SimpleSprite sprite = new SimpleSprite("flower.png");
 
         // Since Sprite inherits properties from IDisplayObject,
         // we can customize it using IDisplayObject methods.
@@ -49,6 +49,6 @@ public class SimpleSpriteDemo implements D2D2Application {
         sprite.setScale(0.5f, 0.5f);
 
         // Add the sprite to the stage
-        stage.add(sprite);
+        stage.addChild(sprite);
     }
 }

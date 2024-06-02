@@ -19,7 +19,7 @@ package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
-import com.ancevt.d2d2.display.Sprite;
+import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.text.BitmapText;
 import com.ancevt.d2d2.event.Event;
@@ -38,7 +38,7 @@ public class EventListenerDemo implements D2D2Application {
         // Create a status text for demonstration convenience
         BitmapText statusText = new BitmapText();
         statusText.setScale(3, 3);
-        stage.add(statusText, 10, 10);
+        stage.addChild(statusText, 10, 10);
 
         // For example, register a listener for the RESIZE event for the Stage
         // When the window size changes (or when switching to fullscreen mode)
@@ -54,7 +54,7 @@ public class EventListenerDemo implements D2D2Application {
         // ------------ Example 2 ------------
 
         // Create a sprite and set its coordinates
-        Sprite sprite = new Sprite("flower.png");
+        SimpleSprite sprite = new SimpleSprite("flower.png");
         sprite.setXY(400, 300);
 
         // Register a listener for the LOOP_UPDATE event
@@ -65,7 +65,7 @@ public class EventListenerDemo implements D2D2Application {
         });
 
         // Add the sprite to the stage
-        stage.add(sprite);
+        stage.addChild(sprite);
     }
 
 }
