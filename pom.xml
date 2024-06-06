@@ -6,7 +6,7 @@
 
     <groupId>com.ancevt.d2d2</groupId>
     <artifactId>d2d2-samples</artifactId>
-    <version>0.1.6.3-SNAPSHOT</version>
+    <version>0.1.6.3</version>
 
     <name>D2D2 Framework Samples</name>
     <url>https://githib.com/Anc3vt/d2d2-samples</url>
@@ -89,13 +89,6 @@
             <groupId>com.ancevt.d2d2</groupId>
             <artifactId>d2d2-components</artifactId>
             <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

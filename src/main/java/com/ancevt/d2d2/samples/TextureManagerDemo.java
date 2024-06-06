@@ -38,7 +38,7 @@ public class TextureManagerDemo implements D2D2Application {
         // Load the texture atlas from src/resources/assets/
         TextureAtlas textureAtlas = textureManager.loadTextureAtlas("d2d2-samples-tileset.png");
         // Create a texture from the atlas with the specified coordinates and dimensions
-        TextureClip textureClip = textureAtlas.createTexture(256, 0, 144, 128);
+        TextureClip textureClip = textureAtlas.createTextureClip(256, 0, 144, 128);
         // Create a sprite using the created texture
         SimpleSprite sprite = new SimpleSprite(textureClip);
 
