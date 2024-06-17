@@ -34,7 +34,7 @@ public class TextureManagerDemo implements D2D2Application {
     @Override
     public void onCreate(Stage stage) {
         // Get the texture manager from D2D2
-        TextureManager textureManager = D2D2.getTextureManager();
+        TextureManager textureManager = D2D2.textureManager();
         // Load the texture atlas from src/resources/assets/
         TextureAtlas textureAtlas = textureManager.loadTextureAtlas("d2d2-samples-tileset.png");
         // Create a texture from the atlas with the specified coordinates and dimensions
