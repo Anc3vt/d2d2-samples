@@ -22,7 +22,7 @@ import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
-import com.ancevt.d2d2.display.text.BitmapText;
+import com.ancevt.d2d2.display.text.Text;
 import com.ancevt.d2d2.event.InteractiveEvent;
 import com.ancevt.d2d2.display.interactive.InteractiveContainer;
 
@@ -35,7 +35,7 @@ public class InteractiveDemo implements D2D2Application {
     @Override
     public void onCreate(Stage stage) {
         // Create a text object for status display
-        BitmapText statusText = new BitmapText();
+        Text statusText = new Text();
         // Set the text scale
         statusText.setScale(3, 3);
         // Add the text to the stage and set its position

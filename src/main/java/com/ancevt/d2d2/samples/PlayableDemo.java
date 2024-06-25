@@ -47,7 +47,7 @@ public class PlayableDemo implements D2D2Application {
         // Create an animated sprite
         Playable anim = new PlayableSprite(
             // Load the texture atlas and create textures
-            D2D2.textureManager().loadTextureAtlas("d2d2-samples-tileset.png").createTexturesClipsHor(256, 128, 48, 48, 4)
+            D2D2.textureManager().loadTexture("d2d2-samples-tileset.png").createTexturesClipsHor(256, 128, 48, 48, 4)
         );
 
         // Set the scale of the sprite

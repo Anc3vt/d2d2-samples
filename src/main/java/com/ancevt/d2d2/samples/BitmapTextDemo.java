@@ -18,12 +18,12 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
+import com.ancevt.d2d2.display.text.Text;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.display.Color;
 import com.ancevt.d2d2.display.Stage;
-import com.ancevt.d2d2.display.text.BitmapFont;
-import com.ancevt.d2d2.display.text.BitmapText;
-import com.ancevt.d2d2.display.text.TrueTypeBitmapFontBuilder;
+import com.ancevt.d2d2.display.text.Font;
+import com.ancevt.d2d2.display.text.TrueTypeFontBuilder;
 
 public class BitmapTextDemo implements D2D2Application {
 
@@ -36,45 +36,45 @@ public class BitmapTextDemo implements D2D2Application {
 
         // ------------ Example 1 ------------
 
-        // Create the first bitmap text with the default bitmap font, customize it, and place it on the stage
-        BitmapText bitmapText1 = new BitmapText();
-        bitmapText1.setText("bitmapText1: Using default bitmap font\nSecond line...\nThird...");
-        bitmapText1.setColor(Color.YELLOW);
-        bitmapText1.setScale(2, 2);
-        stage.addChild(bitmapText1, 100, 100);
+        // Create the first text with the default font, customize it, and place it on the stage
+        Text text1 = new Text();
+        text1.setText("text1: Using default font\nSecond line...\nThird...");
+        text1.setColor(Color.YELLOW);
+        text1.setScale(2, 2);
+        stage.addChild(text1, 100, 100);
 
 
         // ------------ Example 2 ------------
 
-        // Create the second bitmap text by generating a bitmap font from any TrueType font
-        // using TtfBitmapFontBuilder
-        BitmapFont bitmapFont = new TrueTypeBitmapFontBuilder()
+        // Create the second text by generating a font from any TrueType font
+        // using TrueTypeFontBuilder
+        Font font = new TrueTypeFontBuilder()
             .fontSize(24)
             .assetPath("d2d2ttf/FreeSansBold.ttf")
             .textAntialias(true)
             .build();
 
-        BitmapText bitmapText2 = new BitmapText(bitmapFont);
-        bitmapText2.setText("bitmapText2: Using TtfBitmapFontBuilder\n generated bitmap font");
-        bitmapText2.setColor(Color.GREEN);
+        Text text2 = new Text(font);
+        text2.setText("text2: Using TtfFontBuilder\n generated font");
+        text2.setColor(Color.GREEN);
         // place it on the stage
-        stage.addChild(bitmapText2, 100, 200);
+        stage.addChild(text2, 100, 200);
 
 
         // ------------ Example 3 ------------
 
-        // Create the third bitmap text using a bitmap font that has already been created
-        // The following code demonstrates the ability to use multicolor in bitmap text
+        // Create the third text using a font that has already been created
+        // The following code demonstrates the ability to use multicolor in text
         // using hex-RGB tags in the format <FFFFFF>
-        BitmapText bitmapText3 = new BitmapText(bitmapFont);
+        Text text3 = new Text(font);
         // Enable multicolor
-        bitmapText3.setMulticolor(true);
+        text3.setMulticolor(true);
         // Multicolor text should start with the `#` sign. It will not be rendered and will only signal
-        // to the bitmap text that it should be rendered using multicolor
-        bitmapText3.setText("bitmapText3: <FF00FF>multicolor<FF99EE> bitmap<0000FF> text\n" +
-            "<AABBEE>The second line of bitmap text");
+        // to the text that it should be rendered using multicolor
+        text3.setText("text: <FF00FF>multicolor<FF99EE> text<0000FF> text\n" +
+            "<AABBEE>The second line of text");
 
-        stage.addChild(bitmapText3, 100, 300);
+        stage.addChild(text3, 100, 300);
         // place it on the stage
 
     }

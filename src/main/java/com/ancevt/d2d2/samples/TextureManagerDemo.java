@@ -18,12 +18,12 @@
 package com.ancevt.d2d2.samples;
 
 import com.ancevt.d2d2.D2D2;
-import com.ancevt.d2d2.display.texture.TextureClip;
-import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
-import com.ancevt.d2d2.display.texture.TextureAtlas;
+import com.ancevt.d2d2.display.texture.Texture;
+import com.ancevt.d2d2.display.texture.TextureClip;
 import com.ancevt.d2d2.display.texture.TextureManager;
+import com.ancevt.d2d2.lifecycle.D2D2Application;
 
 public class TextureManagerDemo implements D2D2Application {
 
@@ -36,7 +36,7 @@ public class TextureManagerDemo implements D2D2Application {
         // Get the texture manager from D2D2
         TextureManager textureManager = D2D2.textureManager();
         // Load the texture atlas from src/resources/assets/
-        TextureAtlas textureAtlas = textureManager.loadTextureAtlas("d2d2-samples-tileset.png");
+        Texture textureAtlas = textureManager.loadTexture("d2d2-samples-tileset.png");
         // Create a texture from the atlas with the specified coordinates and dimensions
         TextureClip textureClip = textureAtlas.createTextureClip(256, 0, 144, 128);
         // Create a sprite using the created texture

@@ -21,7 +21,7 @@ import com.ancevt.d2d2.D2D2;
 import com.ancevt.d2d2.lifecycle.D2D2Application;
 import com.ancevt.d2d2.display.SimpleSprite;
 import com.ancevt.d2d2.display.Stage;
-import com.ancevt.d2d2.display.text.BitmapText;
+import com.ancevt.d2d2.display.text.Text;
 import com.ancevt.d2d2.event.Event;
 
 public class EventListenerDemo implements D2D2Application {
@@ -36,7 +36,7 @@ public class EventListenerDemo implements D2D2Application {
         // ------------ Example 1 ------------
 
         // Create a status text for demonstration convenience
-        BitmapText statusText = new BitmapText();
+        Text statusText = new Text();
         statusText.setScale(3, 3);
         stage.addChild(statusText, 10, 10);
 
