@@ -25,10 +25,10 @@ import com.ancevt.d2d2.display.Stage;
 import com.ancevt.d2d2.display.text.Font;
 import com.ancevt.d2d2.display.text.TrueTypeFontBuilder;
 
-public class BitmapTextDemo implements D2D2Application {
+public class TextDemo implements D2D2Application {
 
     public static void main(String[] args) {
-        D2D2.init(BitmapTextDemo.class, args);
+        D2D2.init(TextDemo.class, args);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class BitmapTextDemo implements D2D2Application {
             .build();
 
         Text text2 = new Text(font);
-        text2.setText("text2: Using TtfFontBuilder\n generated font");
+        text2.setText("text2: Using TrueTypeFontBuilder\n generated font");
         text2.setColor(Color.GREEN);
         // place it on the stage
         stage.addChild(text2, 100, 200);
